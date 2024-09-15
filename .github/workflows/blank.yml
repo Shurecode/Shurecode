@@ -1,0 +1,117 @@
+# Let's create a PowerPoint presentation based on the outlined slides for the AESAT tool introduction
+
+from pptx import Presentation
+from pptx.util import Inches
+
+# Create a PowerPoint presentation object
+prs = Presentation()
+
+# Define slide layout (Title Slide for first slide, and then Title and Content for the rest)
+title_slide_layout = prs.slide_layouts[0]
+content_slide_layout = prs.slide_layouts[1]
+
+# Slide 1: Title Slide
+slide_1 = prs.slides.add_slide(title_slide_layout)
+title = slide_1.shapes.title
+subtitle = slide_1.placeholders[1]
+title.text = "Agricultural Extension System Assessment Tool (AESAT)"
+subtitle.text = "A Comprehensive Framework for Assessing Extension Systems\nPresented by Olusola Adeyemo\nDate: (Insert date)"
+
+# Slide 2: Introduction to AESAT
+slide_2 = prs.slides.add_slide(content_slide_layout)
+title_2 = slide_2.shapes.title
+title_2.text = "Introduction to AESAT"
+content_2 = slide_2.shapes.placeholders[1].text = (
+    "The Agricultural Extension System Assessment Tool (AESAT) is designed to evaluate and improve the "
+    "effectiveness of national agricultural extension systems. AESAT focuses on coordination, inclusivity, "
+    "decentralization, digitalization, and private sector engagement to ensure comprehensive support for farmers."
+)
+
+# Slide 3: Thematic Areas Overview
+slide_3 = prs.slides.add_slide(content_slide_layout)
+title_3 = slide_3.shapes.title
+title_3.text = "Key Thematic Areas of AESAT"
+content_3 = slide_3.shapes.placeholders[1].text = (
+    "AESAT evaluates extension systems across 8 critical thematic areas:\n"
+    "- National Planning and Coordination\n"
+    "- Farmer Awareness and Participation\n"
+    "- Decentralization and Extension Effectiveness\n"
+    "- Quality Assurance of Extension Services\n"
+    "- Policy, Legal, and Regulatory Environment\n"
+    "- Extension Content and Delivery Mechanisms\n"
+    "- Digitalization in Extension Systems\n"
+    "- Private Sector Engagement and Last-Mile Delivery"
+)
+
+# Slide 4: Strategic Objectives and Indicators
+slide_4 = prs.slides.add_slide(content_slide_layout)
+title_4 = slide_4.shapes.title
+title_4.text = "Strategic Objectives and Indicators"
+content_4 = slide_4.shapes.placeholders[1].text = (
+    "Each Thematic Area contains specific Strategic Objectives and Indicators to measure performance. "
+    "Example for Thematic Area I (National Planning and Coordination):\n"
+    "- Strategic Objective: Established and well-coordinated national extension strategy.\n"
+    "- Indicator 1: Existence of a national extension strategy or policy document.\n"
+    "- Indicator 2: Budget allocation for implementing the national extension strategy."
+)
+
+# Slide 5: AESAT’s Assessment Approach
+slide_5 = prs.slides.add_slide(content_slide_layout)
+title_5 = slide_5.shapes.title
+title_5.text = "AESAT’s Assessment Approach"
+content_5 = slide_5.shapes.placeholders[1].text = (
+    "AESAT uses a Likert scale (0-3) to assess each indicator:\n"
+    "0: No or minimal activity\n"
+    "1: Low level of activity\n"
+    "2: Moderate activity but still below optimal performance\n"
+    "3: High level of activity, system performing well\n"
+    "Color-coded visuals help visualize areas of strength (green) and areas needing improvement (red)."
+)
+
+# Slide 6: How AESAT Works
+slide_6 = prs.slides.add_slide(content_slide_layout)
+title_6 = slide_6.shapes.title
+title_6.text = "How AESAT Works"
+content_6 = slide_6.shapes.placeholders[1].text = (
+    "AESAT involves data collection, stakeholder interviews, and performance metrics to assess national extension systems. "
+    "The tool generates a comprehensive report highlighting strengths and gaps and provides actionable recommendations."
+)
+
+# Slide 7: Sample Thematic Area Assessment
+slide_7 = prs.slides.add_slide(content_slide_layout)
+title_7 = slide_7.shapes.title
+title_7.text = "Sample Assessment – National Planning and Coordination"
+content_7 = slide_7.shapes.placeholders[1].text = (
+    "Example:\n"
+    "- Indicator 1: Existence of a national extension strategy or policy document.\n"
+    "- Score: 2 (Moderate activity)\n"
+    "- Color: Yellow\n"
+    "- Indicator 2: Budget allocation for implementing the national extension strategy.\n"
+    "- Score: 1 (Low level of activity)\n"
+    "- Color: Red"
+)
+
+# Slide 8: Benefits and Expected Outcomes
+slide_8 = prs.slides.add_slide(content_slide_layout)
+title_8 = slide_8.shapes.title
+title_8.text = "Benefits of AESAT"
+content_8 = slide_8.shapes.placeholders[1].text = (
+    "AESAT provides a clear pathway for improving extension services. It promotes multi-stakeholder collaboration, "
+    "evidence-based policy decisions, and enhanced service delivery to farmers. The tool is adaptable to different country contexts, "
+    "making it highly scalable."
+)
+
+# Slide 9: Conclusion
+slide_9 = prs.slides.add_slide(content_slide_layout)
+title_9 = slide_9.shapes.title
+title_9.text = "Conclusion"
+content_9 = slide_9.shapes.placeholders[1].text = (
+    "AESAT offers a comprehensive assessment framework that addresses the unique challenges faced by national extension systems. "
+    "With its actionable insights and flexible design, AESAT is a valuable tool for strengthening agricultural extension services across Africa."
+)
+
+# Save the presentation
+pptx_file_path = "/mnt/data/AESAT_Presentation.pptx"
+prs.save(pptx_file_path)
+
+pptx_file_path  # Return the file path for download
